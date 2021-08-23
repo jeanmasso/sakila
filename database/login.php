@@ -4,35 +4,30 @@ include "database.php";
 
 class Login extends Database {
 
-  public function login() {
-    try {
-      $login = trim($_POST["user"]);
-      $password = trim($_POST["password"]);
+  public function __construct() {
+    $this->table = "staff";
+  }
 
-      $query = $this->query("SELECT * FROM staff WHERE email = '{$login}'");
-      $user = $query->fetch();
+  public function login($login, $password) {
+    $query = $this->query("SELECT username, email, password FROM {$this->table} WHERE email = '{$login}' OR username = '{$login}'");
+    $query->execute();
+    //$user = $query->setFetchMode(PDO::FETCH_ASSOC);
+    $user = $query->fetch();
 
-      if ($login == $user["email"] && $password == $user["password"]) {
-        $_SESSION["user"] = true;
-        return true;
-      }
-    } catch (PDOException $e) {
-      echo "Exception reçue : ",  $e->getMessage(), "\n";
+    if ((!empty($login) || !empty($password)) && ($login == $user["email"] || $login == $user["username"]) && $password == $user["password"]) {
+      $_SESSION["staff"] = true;
+      return true;
     }
   }
 
   public function is_logged() {
-    if (isset($_SESSION["user"]))
+    if (isset($_SESSION["staff"]))
       return true;
   }
 
   public function logout() {
-    try {
-      session_destroy();
-      unset($_SESSION["user"]);
-      return true;
-    } catch (PDOException $e) {
-      echo "Exception reçue : ",  $e->getMessage(), "\n";
-    }
+    unset($_SESSION["staff"]);
+    session_destroy();
+    return true;
   }
 }

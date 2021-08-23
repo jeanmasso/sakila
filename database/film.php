@@ -3,24 +3,25 @@
 include "database.php";
 
 class Film extends Database {
-  protected $table = 'film';
 
   public function getFilms() {
     try {
-      $result = $this->query('SELECT * FROM ' . $this->table);
-      return $result->fetch();
+      $result = $this->query("SELECT * FROM film");
+      $result = $result->fetch();
+      die(var_dump($result));
+      return $result;
     } catch (PDOException $e) {
       echo 'Exception reçue : ',  $e->getMessage(), "\n";
     }
   }
 
-  public function getFilm($id) {
+  /*public function getFilm() {
     try {
-      $result = $this->query('SELECT * FROM ' . $this->table . ' WHERE film_id = '.$id);
+      $result = $this->query("SELECT * FROM film WHERE film_id = 1");
       return $result->fetch();
     } catch (PDOException $e) {
       echo 'Exception reçue : ',  $e->getMessage(), "\n";
     }
-  }
+  }*/
 
 }

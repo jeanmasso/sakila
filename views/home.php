@@ -1,9 +1,9 @@
 <?php
   include 'layout/header.php';
+  $user = new Login();
 
-  $logout = new Login();
-  if (isset($_POST["logout"])) {
-    if ($logout->logout())
+  if (isset($_SESSION["staff"]) && isset($_POST["logout"])) {
+    if ($user->logout())
       header("Location: ../index.php");
   }
 ?>

@@ -1,10 +1,15 @@
 <?php
   session_start();
   include "database/login.php";
-
   $user = new Login();
-  if (isset($_POST["login"])) {
-    if ($user->login())
+
+  if ($user->is_logged())
+    header("Location: views/home.php");
+
+  if (!$user->is_logged() && isset($_POST["login"])) {
+    $login = trim($_POST["user"]);
+    $password = trim($_POST["password"]);
+    if ($user->login($login, $password))
       header("Location: views/home.php");
   }
 ?>
@@ -46,8 +51,8 @@
       </div>
       <form class="row g-4 justify-content-center" method="POST">
         <div class="col-9">
-          <label for="email" class="form-label">Nom d'utilisateur ou email</label>
-          <input type="email" class="form-control" id="user" name="user" placeholder="Nom d'utilisateur ou email" required>
+          <label for="user" class="form-label">Nom d'utilisateur ou email</label>
+          <input type="text" class="form-control" id="user" name="user" placeholder="Nom d'utilisateur ou email" required>
         </div>
         <div class="col-9">
           <label for="password" class="form-label">Mot de passe</label>

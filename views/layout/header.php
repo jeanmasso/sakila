@@ -1,8 +1,8 @@
 <?php
   session_start();
   include "../database/login.php";
-
   $user = new Login();
+
   if (!$user->is_logged())
     $user->redirect("../index.php");
 ?>
