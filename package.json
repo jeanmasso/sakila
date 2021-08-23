@@ -1,0 +1,25 @@
+{
+  "name": "sakila",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeanmasso/sakila.git"
+  },
+  "author": "Jean Masso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeanmasso/sakila/issues"
+  },
+  "homepage": "https://github.com/jeanmasso/sakila#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bootstrap": "^5.1.0",
+    "jquery": "^3.6.0",
+    "jsdom": "^17.0.0"
+  }
+}
