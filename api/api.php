@@ -1,5 +1,5 @@
 <?php
-  include_once 'autoloader.php';
+  include_once '../db/autoloader.php';
   autoloader::register();
 
   $request = "";
