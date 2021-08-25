@@ -12,8 +12,14 @@
     <h1 class="text-center">Liste de tous les films</h1>
   </div>
 
-  <input type="text" id="test" placeholder="..."/>
-  <button type="button" onclick="searchFilm()">Click</button>
+  <div class="row mb-4 justify-content-center">
+    <div class="col-9">
+      <input type="text" id="test" class="form-control" placeholder="Rechercher un film..."/>
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-success" onclick="searchFilm()">Rechercher</button>
+    </div>
+  </div>
 
   <div class="row g-3">
   <?php foreach ($films as $film): ?>
