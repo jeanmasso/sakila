@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require 'database/autoloader.php';
+  require 'dbConfig/autoloader.php';
   autoloader::register();
 
   $user = new login();
