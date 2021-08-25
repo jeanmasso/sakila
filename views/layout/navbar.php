@@ -1,4 +1,11 @@
-<?php $user = new Login(); ?>
+<?php
+  $user = new login();
+
+  if (isset($_SESSION["staff"]) && isset($_POST["logout"])) {
+    if ($user->logout())
+      $user->redirect("../index.php");
+  }
+?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="home.php">Sakila</a>
@@ -25,7 +32,10 @@
               </li>
               <hr class="dropdown-divider">
               <li>
-                <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+                <form method="POST">
+                  <button class="dropdown-item" type="submit" name="logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</button>
+                </form>
+                <!--<a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>-->
               </li>
             </ul>
           </li>

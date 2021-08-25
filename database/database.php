@@ -1,6 +1,6 @@
 <?php
 
-class Database {
+class database {
   protected $table;
 
   private $servername = 'localhost:3306';

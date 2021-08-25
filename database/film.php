@@ -1,27 +1,23 @@
 <?php
 
-include "database.php";
+  include "../database.php";
 
-class Film extends Database {
+  class film extends database {
 
-  public function getFilms() {
-    try {
-      $result = $this->query("SELECT * FROM film");
-      $result = $result->fetch();
-      die(var_dump($result));
-      return $result;
-    } catch (PDOException $e) {
-      echo 'Exception reçue : ',  $e->getMessage(), "\n";
+    public function __construct() {
+      $this->table = "film";
     }
+
+    public function getFilms() {
+      $query = $this->connect()->query("SELECT * FROM {$this->table}");
+      $query->execute();
+      return $query->fetchAll();
+    }
+
+    public function getFilm($id) {
+      $query = $this->connect()->query("SELECT * FROM {$this->table} WHERE film_id = {$id}");
+      $query->execute();
+      return $query->fetch();
+    }
+
   }
-
-  /*public function getFilm() {
-    try {
-      $result = $this->query("SELECT * FROM film WHERE film_id = 1");
-      return $result->fetch();
-    } catch (PDOException $e) {
-      echo 'Exception reçue : ',  $e->getMessage(), "\n";
-    }
-  }*/
-
-}

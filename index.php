@@ -1,16 +1,16 @@
 <?php
   session_start();
-  include "database/login.php";
-  $user = new Login();
+  require 'database/login.php';
+  $user = new login();
 
   if ($user->is_logged())
-    header("Location: views/home.php");
+    $user->redirect("views/home.php");
 
   if (!$user->is_logged() && isset($_POST["login"])) {
     $login = trim($_POST["user"]);
     $password = trim($_POST["password"]);
     if ($user->login($login, $password))
-      header("Location: views/home.php");
+      $user->redirect("views/home.php");
   }
 ?>
 <!DOCTYPE html>

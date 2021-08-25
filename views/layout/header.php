@@ -1,7 +1,9 @@
 <?php
   session_start();
-  include "../database/login.php";
-  $user = new Login();
+  require '../database/autoloader.php';
+  autoloader::register();
+
+  $user = new login();
 
   if (!$user->is_logged())
     $user->redirect("../index.php");
