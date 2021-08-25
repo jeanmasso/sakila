@@ -1,6 +1,6 @@
 <?php
-
-  include "../database.php";
+  include_once 'autoloader.php';
+  autoloader::register();
 
   class film extends database {
 
@@ -14,10 +14,15 @@
       return $query->fetchAll();
     }
 
-    public function getFilm($id) {
-      $query = $this->connect()->query("SELECT * FROM {$this->table} WHERE film_id = {$id}");
+    public function searchFilm($request) {
+      $query = $this->connect()->prepare("SELECT film_id, title FROM film WHERE title LIKE :request");
+      $query->bindParam(':request', $request, PDO::PARAM_STR);
       $query->execute();
-      return $query->fetch();
+      return $query->fetchAll();
+
+//      $query = $this->connect()->query("SELECT * FROM {$this->table} WHERE film_id = {$id}");
+//      $query->execute();
+//      return $query->fetch();
     }
 
   }

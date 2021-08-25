@@ -1,6 +1,7 @@
 <?php
 
-  require "database.php";
+  include_once 'autoloader.php';
+  autoloader::register();
 
   class login extends database {
 

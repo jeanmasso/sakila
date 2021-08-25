@@ -12,6 +12,9 @@
     <h1 class="text-center">Liste de tous les films</h1>
   </div>
 
+  <input type="text" id="test" placeholder="..."/>
+  <button type="button" onclick="searchFilm()">Click</button>
+
   <div class="row g-3">
   <?php foreach ($films as $film): ?>
     <div class="col-4">

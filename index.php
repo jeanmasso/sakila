@@ -1,6 +1,8 @@
 <?php
   session_start();
-  require 'database/login.php';
+  require 'database/autoloader.php';
+  autoloader::register();
+
   $user = new login();
 
   if ($user->is_logged())
