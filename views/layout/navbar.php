@@ -35,7 +35,6 @@
                 <form method="POST">
                   <button class="dropdown-item" type="submit" name="logout"><i class="fas fa-sign-out-alt"></i> Déconnexion</button>
                 </form>
-                <!--<a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>-->
               </li>
             </ul>
           </li>

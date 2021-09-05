@@ -3,6 +3,18 @@
 
   $query = new film();
   $films = $query->getFilms();
+
+  /*
+  $ch = curl_init("www.example.com/curl.php?option=test");
+  $ch = curl_init("http://localhost:8888/sakila/api/api.php?requete=academy");
+  curl_setopt($ch, CURLOPT_HEADER, 0);
+  curl_setopt($ch, CURLOPT_PUT, 1);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  $output = curl_exec($ch);
+  curl_close($ch);
+  echo $output;
+  */
+
 ?>
 
 <!-- PAGE CONTENT - Contenu de la page -->
