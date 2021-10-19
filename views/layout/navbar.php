@@ -1,5 +1,5 @@
 <?php
-  $user = new login();
+  $user = new Login();
 
   if (isset($_SESSION["staff"]) && isset($_POST["logout"])) {
     if ($user->logout())
@@ -18,6 +18,17 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="films.php">Films</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="rentals.php">Locations</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav me-2">
+          <li class="nav-item">
+            <button class="btn btn-outline-light me-3" type="button" data-bs-toggle="modal" data-bs-target="#addRentalModal">Faire une location</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#addReturnRentalModal">Faire un retour</button>
           </li>
         </ul>
         <ul class="navbar-nav">

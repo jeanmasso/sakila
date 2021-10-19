@@ -1,9 +1,9 @@
 <?php
   session_start();
-  require 'db/autoloader.php';
-  autoloader::register();
+  require 'db/Autoloader.php';
+  Autoloader::register();
 
-  $user = new login();
+  $user = new Login();
 
   if ($user->is_logged())
     $user->redirect("views/home.php");

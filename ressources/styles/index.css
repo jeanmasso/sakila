@@ -1,3 +1,32 @@
+.fixed-table-loading {
+  display: none;
+}
 
+.fixed-table-pagination, .pagination-detail {
+  display: flex;
+  align-items: center;
+}
+
+.page-list {
+  margin-left: 20px;
+}
+
+.float-right.pagination {
+  margin-left: auto;
+}
+.float-right.pagination .pagination {
+  margin: initial;
+}
+
+footer {
+  margin-top: 30px;
+  position: relative;
+  z-index: 4;
+}
+footer .footer {
+  bottom: 0;
+  position: fixed !important;
+  width: 100%;
+}
 
 /*# sourceMappingURL=index.css.map */

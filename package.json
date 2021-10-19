@@ -19,6 +19,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "bootstrap": "^5.1.0",
+    "bootstrap-table": "^1.18.3",
     "jquery": "^3.6.0",
     "jsdom": "^17.0.0"
   }
