@@ -56,4 +56,4 @@ Back-End:
 * Débuguer l'ajout d'une location
 * Intégrer le retour d'une location
 * Gestion des urls par des routes (utilisation de composer)
-* Vérification des données dans l'API avant l'envoi pour inserion dans la base de données
+* Vérification des données dans l'API avant l'envoi pour insertion dans la base de données
